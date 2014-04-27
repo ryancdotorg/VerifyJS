@@ -1,5 +1,7 @@
-VerifyJS - load JavaScript from a CDN - no trust required!
-============================================================
+VerifyJS
+========
+**Load JavaScript from a CDN, no trust required!**
+
 VerifyJS is yet another asyncronous JavaScript/CSS loader with a unique
 feature - it guarantees that the asset you're loading hasn't been tampered
 with or otherwise modified without your knowledge. This is acomplished by
@@ -11,7 +13,7 @@ and distribution to encourage secure configurations. Also note that this is
 not yet a stable release.
 
 Features
-========
+--------
 * Asyncronously load JS and CSS
 * Execute either 'in-order' or 'as soon as ready'
 * Specify callbacks for various events (success, verified, error,
@@ -24,7 +26,7 @@ Features
 * Verify asset content with sha256 and execute only if it matchs
 
 Limitations
-===========
+-----------
 * In order to see the content of an asset before injecting it, a XMLHTTPRequest
 (or on older versions of IE, XDomainRequest) must be used. This requires
 the server you're loading an asset from to send CORS headers, which many don't.
@@ -45,7 +47,7 @@ the server you're loading an asset from to send CORS headers, which many don't.
   need to support IE8, please see the examples section.
 
 Usage and Examples
-==================
+------------------
 
 Load VerifyJS (include):
 
@@ -127,7 +129,7 @@ Load jQuery and some plugins with in-order execution, and an 'everything finishe
 If you're using the standard version (verify-min.js, not verify-nocss-min.js), loading stylesheets will work as well.
 
 Objections
-==========
+----------
 * [Javascript Cryptography Considered Harmful](http://www.matasano.com/articles/javascript-cryptography/)!
 
 I almost entirely agree with that article. Let me be *very* clear about what
