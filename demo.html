@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script>
+VerifyJS=function(){function h(a,b){return((a>>1)+(b>>1)<<1)+(a&1)+(b&1)}function k(a,b){return a>>>b|a<<32-b}function u(){}for(var e={},b=1,a,v=[],q=[],r=document;18>++b;)for(a=b*b;312>a;a+=b)q[a]=1;b=1;for(a=0;313>b;)q[++b]||(q[a]=Math.pow(b,0.5)%1*4294967296|0,v[a++]=Math.pow(b,1/3)%1*4294967296|0);e.hash=function(n,e){for(var t=q.slice(b=0),c=unescape(encodeURI(n)),p=[],d=c.length,l=[],g,f;b<d;)l[b>>2]|=(c.charCodeAt(b)&255)<<8*(3-b++%4);d*=8;l[d>>5]|=128<<24-d%32;l[f=(d+64>>9<<4)+15]=d;for(b=
+0;b<f;b+=16){for(c=t.slice(a=0,8);64>a;c[4]=h(c[4],g))p[a]=16>a?l[a+b]:h(h(k(g=p[a-2],17)^k(g,19)^g>>>10,p[a-7]),h(k(g=p[a-15],7)^k(g,18)^g>>>3,p[a-16])),c.unshift(h(g=h(h(h(c.pop(),k(n=c[4],6)^k(n,11)^k(n,25)),h(n&c[5]^~n&c[6],v[a])),p[a++]),h(k(d=c[0],2)^k(d,13)^k(d,22),d&c[1]^c[1]&c[2]^c[2]&d)));for(a=8;a--;)t[a]=h(c[a],t[a])}for(c="";63>a;)c+=(t[++a>>3]>>4*(7-a%8)&15).toString(16);e(c)};e.PENDING=0;e.VERIFIED=1;e.SUCCESS=2;e.E_LOAD=3;e.E_HASH=4;e.E_TIMEOUT=5;e.E_PARSE=6;var s={},m=e.queue=[];
+e.load=function(a,b,h,c){function k(a){g.inject=a}function d(a){return function(){f=null;g.result=a;h(g)}}function l(a){return a in s?(c?(window.setTimeout(d(1),4),k(d(2))):d(2)(),!0):!1}var g={uri:a,result:0,inject:function(){throw"E_INJECT";}},f,m=(/\.(js|css)(\?|$)/.exec(a)||[])[1];h=h||u;if(!m||!b||a in s&&b!==s[a])d(6)();else{s[a]=b;if(l(b))return g;try{f=new XMLHttpRequest,"withCredentials"in f?f.open("GET",a,!0):(f=new XDomainRequest,f.open("GET",a))}catch(q){return d(3)(),g}f.onerror=f.onabort=
+d(3);f.ontimeout=d(5);f.onprogress=u;f.onload=function(){var a=f.responseText;e.hash(a,function(e){g.hash=e;if(e===b){if(l(b))return g;k(function(){s[e]=1;if("css"===m){var b=a,c=r.createElement("style");c.type="text/css";c.styleSheet?c.styleSheet.cssText=b:c.appendChild(r.createTextNode(b));r.getElementsByTagName("head")[0].appendChild(c)}else c=a,b=r.createElement("script"),b.type="text/javascript",b.text=c,c=r.getElementsByTagName("script")[0],c.parentNode.insertBefore(b,c);k(u);d(2)();a=f});c?
+d(1)():g.inject()}else d(4)(),a=f})};f.timeout=1E4;f.send();return g}};e.add=function(a,b,h){m.push(e.load(a,b,function(a){for(h(a);m.length&&1===m[0].result;)m.shift().inject()},!0))};e.done=function(a){m.length?m.push({result:1,inject:a}):a()};return e}();
+    </script>
+    <!--[if lte IE 8]>
+    <script>
+/*
+ async-sha256.js
+ https://github.com/ryancdotorg/async-sha256-js/blob/master/LICENSE
+*/
+var n;
+(function(){function g(a,b){return b>>>a|b<<32-a}function s(a,b){var c=(a&65535)+(b&65535);return(a>>16)+(b>>16)+(c>>16)<<16|c&65535}var u="function"===typeof setTimeout?setTimeout:window.setTimeout,v=[1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,
+3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298],t=64;n=function(){if(this.constructor!==n)throw"AsyncSha256 must be called with 'new'";var a=this;a.f=a.async_block_size=t;a.b=
+function(){a.a=Array(8);a.count=Array(2);a.buffer=Array(64);a.count[0]=a.count[1]=0;a.a[0]=1779033703;a.a[1]=3144134277;a.a[2]=1013904242;a.a[3]=2773480762;a.a[4]=1359893119;a.a[5]=2600822924;a.a[6]=528734635;a.a[7]=1541459225};a.transform=function(){var b,c,d,f,h,q,r,k,l,p,m=Array(16);b=a.a[0];c=a.a[1];d=a.a[2];f=a.a[3];h=a.a[4];q=a.a[5];r=a.a[6];k=a.a[7];for(var e=0;16>e;e++)m[e]=a.buffer[(e<<2)+3]|a.buffer[(e<<2)+2]<<8|a.buffer[(e<<2)+1]<<16|a.buffer[e<<2]<<24;for(e=0;64>e;e++)l=k+(g(6,h)^g(11,
+h)^g(25,h))+(h&q^~h&r)+v[e],16>e?l+=m[e]:(k=m[e+14&15],p=m[e+1&15],l+=m[e&15]+=(g(17,k)^g(19,k)^k>>>10)+m[e+9&15]+(g(7,p)^g(18,p)^p>>>3)),p=(g(2,b)^g(13,b)^g(22,b))+(b&c^b&d^c&d),k=r,r=q,q=h,h=s(f,l),f=d,d=c,c=b,b=s(l,p);a.a[0]+=b;a.a[1]+=c;a.a[2]+=d;a.a[3]+=f;a.a[4]+=h;a.a[5]+=q;a.a[6]+=r;a.a[7]+=k};a.update=function(b,c){var d,f,h=0;f=a.count[0]>>3&63;var g=c&63;(a.count[0]+=c<<3)<c<<3&&a.count[1]++;a.count[1]+=c>>29;for(d=0;d+63<c;d+=64){for(;64>f;f++)a.buffer[f]=b.charCodeAt(h++);a.transform();
+f=0}for(f=0;f<g;f++)a.buffer[f]=b.charCodeAt(h++)};a.e=function(){var b=a.count[0]>>3&63;a.buffer[b++]=128;if(!(56>=b)){for(;64>b;b++)a.buffer[b]=0;a.transform();b=0}for(;56>b;b++)a.buffer[b]=0;a.buffer[56]=a.count[1]>>>24&255;a.buffer[57]=a.count[1]>>>16&255;a.buffer[58]=a.count[1]>>>8&255;a.buffer[59]=a.count[1]&255;a.buffer[60]=a.count[0]>>>24&255;a.buffer[61]=a.count[0]>>>16&255;a.buffer[62]=a.count[0]>>>8&255;a.buffer[63]=a.count[0]&255;a.transform()};a.g=function(){for(var b=0,c=Array(32),d=
+0;8>d;d++)c[b++]=a.a[d]>>>24&255,c[b++]=a.a[d]>>>16&255,c[b++]=a.a[d]>>>8&255,c[b++]=a.a[d]&255;return c};a.d=function(){for(var b=new String,c=0;8>c;c++)for(var d=28;0<=d;d-=4)b+="0123456789abcdef".charAt(a.a[c]>>>d&15);return b};a.sdigest=function(b){a.b();a.update(b,b.length);a.e();return a.d()};a.adigest=function(b,c){var d=new n;d.b();d.c(b,c,a.f)};a.c=function(b,c,d){b.length>d?(a.update(b.slice(0,d),d),u(function(){a.c(b.slice(d),c,d)},4)):(a.update(b,b.length),a.e(),c(a.d()))};a.self_test=
+function(){return"f7846f55cf23e14eebeab5b4e1550cad5b509e3348fbc4efa3a1413d393cb650"==a.sdigest("message digest")}};(function(){var a,b,c=4,d=new n;for(d.b();c-=1;)b=b?b+b:"0123456789abcdef";for(a=+new Date+1;+new Date<a;)++c;for(c=0;++c,+new Date<a+2;)d.update(b,64);t=512*c})()})();try{window.AsyncSha256=n}catch(w){global.AsyncSha256=n};
+(function(){
+  var sha256 = new AsyncSha256();
+  VerifyJS.hash = function(m, c) {
+    sha256.adigest(m, c);
+  };
+})();
+    </script>
+    <![endif]-->
+    <script>
+var logger = function(data) {
+  var file = data.uri.split('/').slice(-1);
+  var msg = 'VerifyJS: ';
+  switch(data.result) {
+    /* only triggered via VerifyJS.add() */
+    case VerifyJS.VERIFIED:
+      msg += 'Download and verification of ' + file + ' successful.';
+      break;
+    case VerifyJS.SUCCESS:
+      msg += 'Successfully loaded ' + file + ' into the DOM.';
+      break;
+    case VerifyJS.E_HASH:
+      msg += 'Content for ' + file + ' did not match the specified hash! ';
+      msg += 'Got ' + data.hash + '.';
+      break;
+    /* no special handling for E_LOAD, E_TIMEOUT, or E_PARSE */
+    default:
+      msg += 'Failed to load ' + file + '!';
+      break;
+  }
+  console.log(msg);
+}
+VerifyJS.add('http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js',
+             'ce0343e1d6f489768eeefe022c12181c6a0822e756239851310acf076d23d10c',
+             logger);
+VerifyJS.add('//cdn.jsdelivr.net/jquery.serializejson/1.2.3/jquery.serializejson.min.js',
+             'ff82686aeec7776efeee93f6bd9013b23a58f012db59bd071ea0130b4fe71c14',
+             logger);
+VerifyJS.add('http://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js',
+             'f4ccf02b69092819ac24575c717a080c3b6c6d6161f1b8d82bf0bb523075032d',
+             logger);
+VerifyJS.done(function() {
+  $('body').text('Everything has loaded successfully!');
+});
+    </script>
+    <title>VerifyJS Demo</title>
+  </head>
+  <body>
+  Waiting...
+  </body>
+</html>
