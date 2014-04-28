@@ -97,11 +97,11 @@ Define a basic callback handler that logs to the console:
           msg += 'Got ' + data.hash + '.';
           break;
         /* no special handling for E_LOAD, E_TIMEOUT, or E_PARSE */
-        case default:
+        default:
           msg += 'Failed to load ' + file + '!';
           break;
-       }
-       console.log(msg);
+      }
+      console.log(msg);
     }
     </script>
 
@@ -119,7 +119,7 @@ Load jQuery and some plugins with in-order execution, and an 'everything finishe
     VerifyJS.add('//cdn.jsdelivr.net/jquery.serializejson/1.2.3/jquery.serializejson.min.js',
                  'ff82686aeec7776efeee93f6bd9013b23a58f012db59bd071ea0130b4fe71c14',
                  logger);
-    VerifYJS.add('http://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js',
+    VerifyJS.add('http://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js',
                  'f4ccf02b69092819ac24575c717a080c3b6c6d6161f1b8d82bf0bb523075032d',
                  logger);
     VerifyJS.done(function() {
