@@ -12,6 +12,10 @@ its content.
 and distribution to encourage secure configurations. Also note that this is
 not yet a stable release.
 
+Check out the demo!
+
+http://ryancdotorg.github.io/VerifyJS/demo.html
+
 Features
 --------
 * Asyncronously load JS and CSS
